@@ -1,0 +1,28 @@
+version: '3'
+
+services:
+  backend1:
+    image: nginxdemos/hello
+    container_name: hello1
+    networks:
+      - backend_network
+      
+  backend2:
+    image: nginxdemos/hello
+    container_name: hello2
+    networks:
+      - backend_network
+    
+  proxy:
+    build: ./simpleproxy
+    ports: 
+      - 80:80 
+    depends_on:
+      - backend1
+      - backend2
+    networks:
+      - backend_network
+
+networks:
+  backend_network:
+        

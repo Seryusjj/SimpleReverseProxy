@@ -1,0 +1,1 @@
+just run: docker-compose up or docker-compose down
