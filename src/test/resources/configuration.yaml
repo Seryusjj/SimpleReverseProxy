@@ -1,0 +1,12 @@
+proxy:
+  listen:
+    address: "127.0.0.1"
+    port: 80
+  services:
+    - name: service1
+      domain: my-service.domain.com
+      hosts:
+        - address: "127.0.0.1"
+          port: 9091
+        - address: "127.0.0.1"
+          port: 9092
